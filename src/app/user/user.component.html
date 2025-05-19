@@ -1,0 +1,162 @@
+<div class="flex">
+  <!-- SIDEBAR -->
+  <aside class="w-96 bg-[#4f759b] text-white p-6 space-y-8 overflow-y-auto h-screen">
+    <!-- Logo -->
+    <div class="text-3xl font-bold tracking-wide ml-12">
+      <span style="color: #d2a037;">Deal</span><span style="color: #3c5489;">Dynamo</span>
+    </div>
+
+    <!-- Home Button -->
+    <div class="mt-6">
+      <button 
+        routerLink="/"
+        class="flex items-center gap-4 w-full text-left px-5 py-3 rounded-lg bg-gradient-to-r from-[#6d8fa3] to-[#4f759b] hover:from-[#4f759b] hover:to-[#6d8fa3] text-white font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+      >
+        <i class="bi bi-house-door text-xl"></i>
+        <span>Home</span>
+      </button>
+    </div>
+
+    <!-- Section: Dashboard -->
+    <div>
+      <div class="text-sm uppercase mb-4 font-medium tracking-wider" style="color: #fbfcfd;">
+        Dashboard
+      </div>
+      <ul class="space-y-3">
+        <li>
+          <button 
+            (click)="showPowerBIView()"
+            class="flex items-center gap-4 w-full text-left px-5 py-3 rounded-lg bg-gradient-to-r from-[#6d8fa3] to-[#4f759b] hover:from-[#4f759b] hover:to-[#6d8fa3] text-white font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="bi bi-graph-up-arrow text-xl"></i>
+            <span>Retail Consumer Dashboard</span>
+          </button>
+        </li>
+        <li>
+          <button 
+            (click)="showPowerBIView01()"
+            class="flex items-center gap-4 w-full text-left px-5 py-3 rounded-lg bg-gradient-to-r from-[#6d8fa3] to-[#4f759b] hover:from-[#4f759b] hover:to-[#6d8fa3] text-white font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="bi bi-speedometer2 text-xl"></i>
+            <span>Tourism Consumer Dashboard</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section: Prediction -->
+    <div>
+      <div class="text-sm uppercase mt-8 mb-4 font-medium tracking-wider" style="color: #f7f8fa;">
+        Prediction
+      </div>
+      <ul class="space-y-3">
+        <li>
+          <button 
+            (click)="showPredictionView()"
+            class="flex items-center gap-4 w-full text-left px-5 py-3 rounded-lg bg-gradient-to-r from-[#6d8fa3] to-[#4f759b] hover:from-[#4f759b] hover:to-[#6d8fa3] text-white font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="bi bi-graph-up-arrow text-xl"></i>
+            <span>Predict Discounts</span>
+          </button>
+        </li>
+        <li>
+          <button 
+            (click)="showPredictionView1()"
+            class="flex items-center gap-4 w-full text-left px-5 py-3 rounded-lg bg-gradient-to-r from-[#6d8fa3] to-[#4f759b] hover:from-[#4f759b] hover:to-[#6d8fa3] text-white font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="bi bi-graph-up-arrow text-xl"></i>
+            <span>Predict The Nearest Stores</span>
+          </button>
+        </li>
+        <li>
+          <button 
+            (click)="showPredictionView2()"
+            class="flex items-center gap-4 w-full text-left px-5 py-3 rounded-lg bg-gradient-to-r from-[#6d8fa3] to-[#4f759b] hover:from-[#4f759b] hover:to-[#6d8fa3] text-white font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="bi bi-graph-up-arrow text-xl"></i>
+            <span>Recommend The Best Products</span>
+          </button>
+        </li>
+        <li>
+          <button 
+            (click)="showPredictionView3()"
+            class="flex items-center gap-4 w-full text-left px-5 py-3 rounded-lg bg-gradient-to-r from-[#6d8fa3] to-[#4f759b] hover:from-[#4f759b] hover:to-[#6d8fa3] text-white font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="bi bi-graph-up-arrow text-xl"></i>
+            <span>Predict Airline Ticket Prices</span>
+          </button>
+        </li>
+        <li>
+          <button
+            (click)="showPredictionView4()"
+            class="flex items-center gap-4 w-full text-left px-5 py-3 rounded-lg bg-gradient-to-r from-[#6d8fa3] to-[#4f759b] hover:from-[#4f759b] hover:to-[#6d8fa3] text-white font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="bi bi-graph-up-arrow text-xl"></i>
+            <span>Segment Hotels</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 p-0">
+    <div class="mt-4 h-[900px]">
+      <iframe
+        *ngIf="showPowerBI"
+        [src]="powerBIUrl"
+        frameborder="0"
+        allowfullscreen
+        class="w-full h-[calc(100vh-5rem)]"
+      ></iframe>
+
+      <iframe
+        *ngIf="showPowerBI01"
+        [src]="powerBIUrl01"
+        frameborder="0"
+        allowfullscreen
+        class="w-full h-[calc(100vh-5rem)]"
+      ></iframe>
+
+      <iframe
+        *ngIf="showPrediction"
+        [src]="predictionUrl"
+        frameborder="0"
+        allowfullscreen
+        class="w-full h-[calc(100vh-5rem)]"
+      ></iframe>
+
+      <iframe
+        *ngIf="showPrediction1"
+        [src]="predictionUrl1"
+        frameborder="0"
+        allowfullscreen
+        class="w-full h-[calc(100vh-5rem)]"
+      ></iframe>
+
+      <iframe
+        *ngIf="showPrediction2"
+        [src]="predictionUrl2"
+        frameborder="0"
+        allowfullscreen
+        class="w-full h-[calc(100vh-5rem)]"
+      ></iframe>
+
+      <iframe
+        *ngIf="showPrediction3"
+        [src]="predictionUrl3"
+        frameborder="0"
+        allowfullscreen
+        class="w-full h-[calc(100vh-5rem)]"
+      ></iframe>
+
+      <iframe
+        *ngIf="showPrediction4"
+        [src]="predictionUrl4"
+        frameborder="0"
+        allowfullscreen
+        class="w-full h-[calc(100vh-5rem)]"
+      ></iframe>
+    </div>
+  </main>
+</div>

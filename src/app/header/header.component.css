@@ -1,0 +1,12 @@
+
+nav .btn,
+nav button {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+}
+nav button {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+

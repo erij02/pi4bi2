@@ -1,0 +1,121 @@
+<div class="flex h-screen">
+  <!-- SIDEBAR -->
+  <aside class="w-99 bg-[#4f759b] text-white p-6 space-y-8">
+    <!-- Logo -->
+    <div class="text-3xl font-bold tracking-wide ml-12">
+      <span style="color: #d2a037;">Deal</span><span style="color: #3c5489;">Dynamo</span>
+    </div>
+
+    <!-- Home Button -->
+    <div class="mt-6">
+      <button 
+        routerLink="/"
+        class="flex items-center gap-4 w-full text-left px-5 py-3 rounded-lg bg-gradient-to-r from-[#6d8fa3] to-[#4f759b] hover:from-[#4f759b] hover:to-[#6d8fa3] text-white font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+      >
+        <i class="bi bi-house-door text-xl"></i>
+        <span>Home</span>
+      </button>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div>
+      <div class="text-sm uppercase text-blue-100 mb-4 font-medium tracking-wider">Dashboard</div>
+      <ul class="space-y-3">
+        <li>
+          <button 
+            (click)="showPowerBIView()"
+            class="flex items-center gap-4 w-full text-left px-5 py-3 rounded-lg bg-gradient-to-r from-[#6d8fa3] to-[#4f759b] hover:from-[#4f759b] hover:to-[#6d8fa3] text-white font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="bi bi-graph-up-arrow text-xl"></i>
+            <span>Dashboard</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Prediction Section -->
+    <div>
+      <div class="text-sm uppercase text-blue-100 mt-8 mb-4 font-medium tracking-wider">Prediction</div>
+      <ul class="space-y-3">
+        <li>
+          <button 
+            (click)="showPredictionView()"
+            class="flex items-center gap-4 w-full text-left px-5 py-3 rounded-lg bg-gradient-to-r from-[#6d8fa3] to-[#4f759b] hover:from-[#4f759b] hover:to-[#6d8fa3] text-white font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="bi bi-graph-up-arrow text-xl"></i>
+            <span>Predict Company Revenue</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Forecasting Section -->
+    <div>
+      <div class="text-sm uppercase text-blue-100 mt-8 mb-4 font-medium tracking-wider">Prediction</div>
+      <ul class="space-y-3">
+        <li>
+          <button 
+            (click)="openForecastModal()"
+            class="flex items-center gap-4 w-full text-left px-5 py-3 rounded-lg bg-gradient-to-r from-[#6d8fa3] to-[#4f759b] hover:from-[#4f759b] hover:to-[#6d8fa3] text-white font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="bi bi-graph-up-arrow text-xl"></i>
+            <span>Forecasting</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 p-0">
+    <!-- Forecast View (en haut) -->
+    <div *ngIf="showForecast" class="p-4">
+      <!-- Bande bleue -->
+      <div class="bg-[#4f759b] text-white h-[100px] w-full text-center flex items-center justify-center font-bold text-[30px] rounded-t-lg mb-6">
+        Forecasting: Top selling category for Geant
+      </div>
+
+      <!-- Conteneur global avec alignement vertical centré -->
+      <div class="flex justify-between items-center ml-[-40px] mr-4">
+        <!-- Bloc image avec le titre centré -->
+        <div class="flex flex-col items-center ml-10">
+          <div class="text-[#4f759b] text-4xl font-bold mb-4">Beverage</div>
+          <img src="assets/images/forecasting/2.png" 
+              alt="Forecasting" 
+              class="w-[800px] h-auto rounded-md shadow">
+        </div>
+
+        <!-- Bloc description à droite -->
+        <div class="w-[260px] ml-4 self-center">
+          <h3 class="text-2xl font-bold text-[#2c3e50] mb-4 font-[Roboto]">Description</h3>
+          <p class="text-[20px] text-gray-700 leading-relaxed font-medium">
+            The Beverage category shows an increasing trend in forecasted sales, driven by seasonal demands and lifestyle changes. This indicates a strategic opportunity for Geant to focus marketing efforts and enhance stock availability to meet future consumer preferences.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Power BI & Prediction Views -->
+    <div class="mt-6 h-[900px]">
+      <iframe
+        *ngIf="showPowerBI"
+        width="90%"
+        height="90%"
+        [src]="powerBIUrl"
+        frameborder="0"
+        allowfullscreen
+        class="w-full h-[calc(100vh-5rem)]"
+      ></iframe>
+
+      <iframe
+        *ngIf="showPrediction"
+        width="100%"
+        height="80%"
+        [src]="predictionUrl"
+        frameborder="0"
+        allowfullscreen
+        class="w-full h-[calc(100vh-5rem)]"
+      ></iframe>
+    </div>
+  </main>
+</div>

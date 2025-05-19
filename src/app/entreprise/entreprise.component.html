@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Nos Entreprises</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body class="bg-[#edf4f8] text-gray-800 font-sans">
+
+  <!-- Barre de navigation -->
+  <nav class="flex justify-between items-center px-10 py-6 backdrop-blur-sm bg-white/30 rounded-b-xl shadow-md">
+    <div class="text-3xl font-bold tracking-wide">
+      <span style="color: #d2a037;">Deal</span><span style="color: #40658b;">Dynamo</span>
+    </div>
+  </nav>
+
+  <!-- Titre Retail -->
+  <section class="text-center my-10">
+    <h2 class="text-4xl font-bold text-blue-800">Retail Companies</h2>
+  </section>
+
+  <!-- MAIN 1 : Retail -->
+  <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-10 pb-10">
+    <!-- Carte 1 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-500 animate-fadeIn">
+      <img src="assets/images/entreprise/Carrefour.jpg" alt="Carrefour" class="w-[600px] h-[400px] object-cover mx-auto">
+      <div class="p-6 text-center">
+        <h3 class="text-xl font-serif text-blue-700">Carrefour</h3>
+        <p class="text-gray-500 mt-2">A global leader in retail, offering a wide range of quality products at competitive prices.</p>
+      </div>
+    </div>
+
+    <!-- Carte 2 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-500 animate-fadeIn">
+      <img src="assets/images/entreprise/Geant.png" alt="Geant" class="w-[600px] h-[400px] object-cover mx-auto">
+      <div class="p-6 text-center">
+        <h3 class="text-xl font-serif text-blue-700">Géant</h3>
+        <p class="text-gray-500 mt-2">A well-known Tunisian retailer, valued for its local offerings and customer-centric services.</p>
+      </div>
+    </div>
+
+    <!-- Carte 3 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-500 animate-fadeIn">
+      <img src="assets/images/entreprise/Mg.jpg" alt="MG" class="w-[600px] h-[400px] object-cover mx-auto">
+      <div class="p-6 text-center">
+        <h3 class="text-xl font-serif text-blue-700">MG</h3>
+        <p class="text-gray-500 mt-2">A historic Tunisian brand, supporting families with trusted products since 1883.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Titre Tourism -->
+  <section class="text-center my-10">
+    <h2 class="text-4xl font-bold text-blue-800">Tourism Companies</h2>
+  </section>
+
+  <!-- MAIN 2 : Tourism -->
+  <main class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-10 pb-20">
+    <!-- Carte 4 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-500 animate-fadeIn">
+      <img src="assets/images/entreprise/Traveltodo.png" alt="Traveltodo" class="w-[600px] h-[400px] object-cover mx-auto">
+      <div class="p-6 text-center">
+        <h3 class="text-xl font-serif text-blue-700">Traveltodo</h3>
+        <p class="text-gray-500 mt-2">A popular online agency known for affordable travel packages and innovative holiday planning.</p>
+      </div>
+    </div>
+
+    <!-- Carte 5 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-500 animate-fadeIn">
+      <img src="assets/images/entreprise/Touring.png" alt="Touring Travel" class="w-[600px] h-[400px] object-cover mx-auto">
+      <div class="p-6 text-center">
+        <h3 class="text-xl font-serif text-blue-700">Touring Travel</h3>
+        <p class="text-gray-500 mt-2">One of Tunisia's oldest travel agencies, offering tailor-made trips and unforgettable experiences.</p>
+      </div>
+    </div>
+
+    <!-- Carte 6 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-500 animate-fadeIn">
+      <img src="assets/images/entreprise/Tunisiebooking.jpg" alt="Tunisie Booking" class="w-[600px] h-[400px] object-cover mx-auto">
+      <div class="p-6 text-center">
+        <h3 class="text-xl font-serif text-blue-700">Tunisie Booking</h3>
+        <p class="text-gray-500 mt-2">A leading hotel booking platform in Tunisia, providing easy access to top accommodations and deals.</p>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

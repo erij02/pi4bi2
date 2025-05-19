@@ -1,0 +1,44 @@
+<!-- Bouton flottant -->
+<div class="chat-toggle-button" (click)="toggleChat()">
+  <img src="assets/images/logo/robot.png" alt="Chatbot" class="chat-icon-img" />
+</div>
+
+
+<!-- Overlay si le chat est ouvert -->
+<div class="chat-overlay" *ngIf="isChatOpen" (click)="toggleChat()"></div>
+
+<!-- Fenêtre du Chatbot -->
+<div class="chat-popup" [class.open]="isChatOpen">
+  <div class="chat-header">
+    <div class="chat-title">
+      <img src="assets/images/logo/logo1.png" alt="Logo" class="chat-logo" />
+      <span>DealDynamo AI</span>
+    </div>
+    <button class="close-button" (click)="toggleChat()">✖</button>
+  </div>
+
+  <div class="chat-box" #chatBox>
+    <div *ngFor="let message of messages" class="message-wrapper"
+         [ngClass]="{'align-user': message.sender === 'user', 'align-bot': message.sender === 'bot'}">
+      <div class="message-content"
+           [ngClass]="{'user-msg': message.sender === 'user', 'bot-msg': message.sender === 'bot'}">
+        <div class="message-text">{{ message.text }}</div>
+
+        <div *ngIf="message.options?.length" class="options-container">
+          <button *ngFor="let option of message.options"
+                  class="option-button"
+                  (click)="onOptionClick(option)">
+            {{ option }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="input-box">
+    <input type="text" [(ngModel)]="userMessage"
+           (keydown.enter)="sendMessage()"
+           placeholder="Écrivez votre question ici..." />
+    <button (click)="sendMessage()" [disabled]="!userMessage.trim()">Envoyer</button>
+  </div>
+</div>

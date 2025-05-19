@@ -1,0 +1,116 @@
+<div class="flex h-screen">
+  <!-- SIDEBAR -->
+  <aside class="w-96 bg-[#4f759b] text-white p-6 space-y-8">
+    <!-- Logo -->
+    <div class="text-3xl font-bold tracking-wide ml-12">
+      <span style="color: #d2a037;">Deal</span><span style="color: #3c5489;">Dynamo</span>
+    </div>
+
+    <!-- Home Button -->
+    <div class="mt-6">
+      <button 
+        routerLink="/"
+        class="flex items-center gap-4 w-full text-left px-5 py-3 rounded-lg bg-gradient-to-r from-[#6d8fa3] to-[#4f759b] hover:from-[#4f759b] hover:to-[#6d8fa3] text-white font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+      >
+        <i class="bi bi-house-door text-xl"></i>
+        <span>Home</span>
+      </button>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div>
+      <div class="text-sm uppercase text-blue-100 mb-4 font-medium tracking-wider">Dashboard</div>
+      <ul class="space-y-3">
+        <li>
+          <button 
+            (click)="showPowerBIView()"
+            class="flex items-center gap-4 w-full text-left px-5 py-3 rounded-lg bg-gradient-to-r from-[#6d8fa3] to-[#4f759b] hover:from-[#4f759b] hover:to-[#6d8fa3] text-white font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="bi bi-graph-up-arrow text-xl"></i>
+            <span>Dashboard</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Prediction Section -->
+    <div>
+      <div class="text-sm uppercase text-blue-100 mt-8 mb-4 font-medium tracking-wider">Prediction</div>
+      <ul class="space-y-3">
+        <li>
+          <button 
+            (click)="showPredictionView()"
+            class="flex items-center gap-4 w-full text-left px-5 py-3 rounded-lg bg-gradient-to-r from-[#6d8fa3] to-[#4f759b] hover:from-[#4f759b] hover:to-[#6d8fa3] text-white font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="bi bi-bar-chart-line-fill text-xl"></i>
+            <span>Predict Company Revenue</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Forecasting Section -->
+    <div>
+      <div class="text-sm uppercase text-blue-100 mt-8 mb-4 font-medium tracking-wider">Forecasting</div>
+      <ul class="space-y-3">
+        <li>
+          <button 
+            (click)="openForecastModal()"
+            class="flex items-center gap-4 w-full text-left px-5 py-3 rounded-lg bg-gradient-to-r from-[#6d8fa3] to-[#4f759b] hover:from-[#4f759b] hover:to-[#6d8fa3] text-white font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
+          >
+            <i class="bi bi-cloud-sun-fill text-xl"></i>
+            <span>Forecasting</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 p-4 overflow-y-auto">
+    <!-- Power BI View -->
+    <iframe
+      *ngIf="showPowerBI"
+      width="100%"
+      height="800"
+      [src]="powerBIUrl"
+      frameborder="0"
+      allowfullscreen
+      class="w-full h-[calc(100vh-5rem)]"
+    ></iframe>
+
+    <!-- Prediction View -->
+    <iframe
+      *ngIf="showPrediction"
+      width="100%"
+      height="800"
+      [src]="predictionUrl"
+      frameborder="0"
+      allowfullscreen
+      class="w-full h-[calc(100vh-5rem)]"
+    ></iframe>
+
+    <!-- Forecasting View -->
+    <div *ngIf="showForecast" class="mt-6 bg-white rounded-lg shadow-lg p-6">
+      <!-- Title -->
+      <div class="bg-[#4f759b] text-white h-[80px] w-full text-center rounded-t-lg flex items-center justify-center font-bold text-[28px] mb-6">
+        Forecasting: Top selling category for MG
+      </div>
+
+      <!-- Content: Image + Description -->
+      <div class="flex items-start">
+        <!-- Image -->
+        <img src="assets/images/forecasting/forecast-image.png" alt="Forecasting MG" class="w-[850px] h-auto rounded-md shadow">
+
+        <!-- Description -->
+        <div class="pl-6 pr-2 flex flex-col justify-start w-[230px]">
+          <h3 class="text-3xl font-bold text-[#2c3e50] mb-4 font-[Roboto]">Description</h3>
+          <p class="text-lg text-gray-600">
+            This chart represents the sales forecasts for household appliances based on historical data.
+            It helps anticipate trends to optimize business decisions
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

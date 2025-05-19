@@ -1,0 +1,26 @@
+<header *ngIf="showHeader">
+  <div class="container mx-auto flex justify-center pl-16 items-center gap-4 py-4">
+
+    <!-- Bouton Home (conditionné) -->
+    <button *ngIf="showHomeButton"
+            routerLink="/"
+            class="border border-blue px-5 py-2 bg-blue-100 hover:bg-blue-200 hover:text-black transition font-bold rounded-lg hover:shadow-lg hover:-translate-y-1">
+      Home
+    </button>
+
+    <!-- Autres boutons -->
+    <button routerLink="/entreprise" class="border border-blue px-5 py-2 bg-blue-100 hover:bg-blue-200 hover:text-black transition font-bold rounded-lg hover:shadow-lg hover:-translate-y-1">
+      Companies
+    </button>
+    <button routerLink="/dashboard" class="border border-blue px-5 py-2 bg-blue-100 hover:bg-blue-200 hover:text-black transition font-bold rounded-lg hover:shadow-lg hover:-translate-y-1">
+      Sales Manager
+    </button>
+    <button routerLink="/user" class="border border-blue px-5 py-2 bg-blue-100 hover:bg-blue-200 hover:text-black transition font-bold rounded-lg hover:shadow-lg hover:-translate-y-1">
+      Customer
+    </button>
+    <button routerLink="/aboutus" class="border border-blue px-5 py-2 bg-blue-100 hover:bg-blue-200 hover:text-black transition font-bold rounded-lg hover:shadow-lg hover:-translate-y-1">
+      About Us
+    </button>
+
+  </div>
+</header>
